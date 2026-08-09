@@ -26,7 +26,7 @@ void solve() {
         return;
     }
     vector<int> v = a;
-    vector<int> is(*max_element(all(a)), 0), si(*max_element(all(a)), 0);
+    vector<int> is(*--st.end() + 1, 0), si(*--st.end() + 1, 0);
     v.erase(unique(v.begin(), v.end()), v.end());
     if (v.size() == a.size()) {
         cout << n << nl;
@@ -65,7 +65,7 @@ void solve() {
         cout << v.size() + 3 << nl;
         return;
     }
-    if (count(is.begin(), is.end(), 2) > 1 || count(is.begin(), is.end(), 3)) {
+    if (count(is.begin(), is.end(), 2) > 1) {
         cout << v.size() + 2 << nl;
         return;
     }
